@@ -6,7 +6,7 @@ const {
   createTask,
   getTasks,
   updateTask,
-} = require('../controllers/taskcontroller'); // Fix this path if incorrect
+} = require('../controllers/taskControllers'); 
 
 const router = express.Router();
 
@@ -15,6 +15,6 @@ router.post('/login', login);
 router.post('/logout', logout);
 router.post('/createTask', createTask);
 router.get('/getTasks', getTasks);
-router.put('/updateTask/:id', updateTask); // Add :id for task identification
+router.put('/updateTask/:id', updateTask); 
 
 module.exports = router;

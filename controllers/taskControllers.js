@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const User = require("../models/usermodel"); // Fix this path if incorrect
-const Task = require("../models/taskmodel"); // Fix this path if incorrect
+const User = require("../models/User"); 
+const Task = require("../models/tasks"); 
 const jwt = require("jsonwebtoken");
 
 const salt = bcrypt.genSaltSync(10);
@@ -51,14 +51,14 @@ const logout = async (req, res) => {
 const createTask = async (req, res) => {
   try {
     const { task, status, date } = req.body;
-    const token = req.cookies.token; // Add this line
+    const token = req.cookies.token; 
     jwt.verify(token, secret, {}, async (err, info) => {
       if (err) throw err;
       const taskdoc = await Task.create({
         task,
         status,
         date,
-        userid: info.id, // Changed to match schema
+        userid: info.id, 
       });
       res.json(taskdoc);
     });
@@ -73,7 +73,7 @@ const getTasks = async (req, res) => {
 
 const updateTask = async (req, res) => {
   try {
-    const token = req.cookies.token; // Add this line
+    const token = req.cookies.token; 
     jwt.verify(token, secret, {}, async (err, info) => {
       if (err) throw err;
       const { id } = req.params;
