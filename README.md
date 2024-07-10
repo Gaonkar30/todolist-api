@@ -169,9 +169,3 @@ The server will start on the port specified in the `.env` file (default is 3000)
 - Populate the MongoDB URI in the `.env` file correctly to avoid connection issues.
 - Add proper error handling and input validation as needed for production use.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-This `README.md` provides an overview of the project, installation instructions, API endpoints, and usage examples. Adjust any paths, endpoint URLs, and instructions based on your specific project structure and requirements.
